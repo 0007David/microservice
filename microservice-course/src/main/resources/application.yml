@@ -1,0 +1,40 @@
+server:
+  port: 9090
+
+spring:
+  application:
+    name: msvc-course
+  config:
+    import: optional:configserver:http://localhost:8888
+# JPA
+#spring.datasource.driver-class-name=oracle.jdbc.driver.OracleDriver
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+#spring.datasource.url=jdbc:oracle:thin:@ol8-19.localdomain:1521:orcl
+    url: jdbc:oracle:thin:@ol8-19.localdomain:1521:orcl
+#spring.datasource.username=MOD_BASE
+    username: MOD_BASE
+#spring.datasource.password=MOD_BASE
+    password: MOD_BASE
+# Puede ser update, validate, create-drop
+#spring.jpa.hibernate.ddl-auto=none
+  jpa:
+    hibernate:
+      ddl-auto: none 
+    properties:
+      hibernate:
+#spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.OracleDialect      
+        dialect: org.hibernate.dialect.OracleDialect
+# Muestra las consultas SQL en consola
+#spring.jpa.show-sql=false
+    show-sql: true
+#spring.jpa.open-in-view=true
+    open-in-view: true
+# spring.jpa.database-platform=org.hibernate.dialect.OracleDialect
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
