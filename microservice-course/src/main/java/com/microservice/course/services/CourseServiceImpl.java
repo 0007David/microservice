@@ -3,17 +3,20 @@ package com.microservice.course.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.microservice.course.Controllers.dtos.StudentDto;
 import com.microservice.course.client.StudentClient;
 import com.microservice.course.http.response.StudentByCourseResponse;
 import com.microservice.course.models.Course;
-import com.microservice.course.repositories.ICourseRepository;
+// import com.microservice.course.repositories.ICourseRepository;
+import com.microservice.course.repositories.ICourseRepository2;
 
+@Service
 public class CourseServiceImpl implements ICourseService {
 
     @Autowired
-    private ICourseRepository repository;
+    private ICourseRepository2 repository;
 
     @Autowired
     private StudentClient studentClient;

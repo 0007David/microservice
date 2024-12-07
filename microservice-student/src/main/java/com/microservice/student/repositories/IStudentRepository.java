@@ -10,7 +10,7 @@ import com.microservice.student.models.Student;
 public interface IStudentRepository extends CrudRepository<Student, Long> {
 
     @Query("SELECT s FROM Student s WHERE s.courseId =:courseId")
-    List<Student> findAllStudents(Long idCourse);
+    List<Student> findAllStudents(Long courseId);
 
     //List<Student> findAllByCourseId(Long courseId);
 

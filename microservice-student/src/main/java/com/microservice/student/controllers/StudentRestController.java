@@ -31,7 +31,7 @@ public class StudentRestController {
     }
     
     @GetMapping("/all")
-    public ResponseEntity<?> findAllStudent(@RequestParam String param) {
+    public ResponseEntity<?> findAllStudent() {
         return ResponseEntity.ok(studentService.findAll());
     }
     

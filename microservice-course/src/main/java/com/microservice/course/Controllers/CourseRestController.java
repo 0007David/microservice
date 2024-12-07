@@ -17,7 +17,7 @@ import com.microservice.course.services.ICourseService;
 
 @RestController
 @RequestMapping("/api/course")
-public class CourseRequestController {
+public class CourseRestController {
 
     @Autowired
     private ICourseService courseService;
@@ -29,7 +29,7 @@ public class CourseRequestController {
     }
     
     @GetMapping("/all")
-    public ResponseEntity<?> findAllCourse(@RequestParam String param) {
+    public ResponseEntity<?> findAllCourse() {
         return ResponseEntity.ok(courseService.findAll());
     }
     
