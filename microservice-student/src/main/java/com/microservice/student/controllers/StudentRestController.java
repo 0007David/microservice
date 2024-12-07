@@ -26,7 +26,7 @@ public class StudentRestController {
 
     @PostMapping("/create")
     @ResponseStatus(HttpStatus.CREATED)
-    public void postMethodName(@RequestBody Student student) {
+    public void saveStudent(@RequestBody Student student) {
         studentService.save(student);
     }
     
